@@ -58,11 +58,11 @@ class Wordle:
         guesses = []
         while (rounds < 6):
             guesses += self._play_round(secret_word)
-            rounds += 1
             self._print_guesses(guesses)
             if self._all_correct(guesses[-5:]):
                 print(color.cs("You win!\n", "GREEN"))
                 break
+            rounds += 1
             
         if rounds >= 6:
             print(color.cs("You lose!\n", "RED"))
